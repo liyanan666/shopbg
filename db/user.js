@@ -15,6 +15,11 @@ var UserSchema = new Schema({
     sex:{ type: String },//性别
     nickname:{ type: String },//昵称
     email:{ type: String },//邮箱
-
+    isbuess:{ type: Number }
 });
-module.exports = mongoose.model('User',UserSchema);
+
+var Code = new Schema({
+    code:{type:String}
+})
+module.exports.User = mongoose.model('User',UserSchema);
+module.exports.Code = mongoose.model('Code',Code);
