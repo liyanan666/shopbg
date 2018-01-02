@@ -25,7 +25,9 @@ app.post('/login',router.login); //登陆
 app.post('/registuser',router.regist); //注册
 app.post('/changeuserinfo',router.changeuserinfo);//更改用户信息
 app.post('/uploadimg',router.uploadimg);//上传图片
-
+app.post('/saveadress',router.saveadress);//保存收货地址
+app.post('/delateadress',router.delateadress);//删除收货地址
+app.post('/updateadress',router.updateadress);//更新收货地址
 
 var server = app.listen(3000,function () {
     var host = server.address().address;

@@ -18,7 +18,6 @@ exports.getcode = function (req, res, next) {  //获取验证码
 };
 
 exports.regist = function (req, res, next) { //注册
-    console.log(req.session.code);
     var Res = res;
     var form = new formidable.IncomingForm();
     form.parse(req, function (err, fields, files) {
@@ -35,6 +34,7 @@ exports.regist = function (req, res, next) { //注册
         var introduction = fields.introduction;
         var headportrait = fields.headportrait;
         Userdata.find({'username' : username}, function(err, res){
+            console.log(1);
             if (err) {
                 console.log("Error:" + err);
             }
@@ -51,7 +51,8 @@ exports.regist = function (req, res, next) { //注册
                         sex:sex,//性别
                         nickname:nickname,//昵称
                         email:email,//邮箱
-                        isbuess:0
+                        isbuess:0,
+                        adressval:[]
                     });
                     user.save(function (err, res) { //保存
 
@@ -205,3 +206,132 @@ exports.changeuserinfo = function (req, res, next){
 
     });
 };
+
+exports.saveadress = function (req, res, next) {
+    var Res = res;
+    var form = new formidable.IncomingForm();
+    form.parse(req, function (err, fields, files) {
+        var _id = fields.id;
+
+        Userdata.update({ "_id" : _id}, { $push : { adressval: JSON.parse(fields.adressval)}},function(err,res){
+            if (err) {
+                console.log("Error:" + err);
+            }
+            else {
+                Userdata.find({'_id' : _id}, function(err, res){
+
+                    if (err) {
+                        console.log("Error:" + err);
+                    }
+                    else {
+                        if(res.length == 0){
+                            Res.send({
+                                "code":-1,
+                                "info":""
+                            });
+                            return;
+                        }
+                        res[0].password = '';
+                        Res.send({
+                            'code':0,
+                            'data':res[0],
+                            'info':'保存成功'
+                        });
+                    }
+                });
+            }
+        });
+    });
+}
+
+
+exports.delateadress = function (req, res, next) {
+    var Res = res;
+    var form = new formidable.IncomingForm();
+    form.parse(req, function (err, fields, files) {
+        var _id = fields.id;
+        var arrayid = fields.arrayid;
+
+        Userdata.update({ "_id" : _id}, { $pull : { adressval: {_id:arrayid}}},function(err,res){
+            if (err) {
+                console.log("Error:" + err);
+            }
+            else {
+                Userdata.find({'_id' : _id}, function(err, res){
+
+                    if (err) {
+                        console.log("Error:" + err);
+                    }
+                    else {
+                        if(res.length == 0){
+                            Res.send({
+                                "code":-1,
+                                "info":""
+                            });
+                            return;
+                        }
+                        res[0].password = '';
+                        Res.send({
+                            'code':0,
+                            'data':res[0],
+                            'info':'保存成功'
+                        });
+                    }
+                });
+            }
+        });
+    });
+}
+
+exports.updateadress = function (req, res, next) {
+    var Res = res;
+    var form = new formidable.IncomingForm();
+    form.parse(req, function (err, fields, files) {
+        var _id = fields.id;
+        var arrayid = fields.arrayid;
+        var adressval = JSON.parse(fields.adressval);
+
+        Userdata.update({ "adressval._id" : arrayid },
+            { $set :
+                {
+                    "adressval.$.Consigneename": adressval.Consigneename,
+                    "adressval.$.Consigneephone": adressval.Consigneephone,
+                    "adressval.$.Consigneeadress": adressval.Consigneeadress,
+                    "adressval.$.areaval": adressval.areaval,
+                }
+            },function(err,res){
+            if (err) {
+                console.log("Error:" + err);
+            }
+            else {
+
+
+
+                    Userdata.find({'_id' : _id}, function(err, res){
+
+                        if (err) {
+                            console.log("Error:" + err);
+                        }
+                        else {
+                            if(res.length == 0){
+                                Res.send({
+                                    "code":-1,
+                                    "info":""
+                                });
+                                return;
+                            }
+                            res[0].password = '';
+                            Res.send({
+                                'code':0,
+                                'data':res[0],
+                                'info':'保存成功'
+                            });
+                        }
+                    });
+
+
+
+            }
+        });
+    });
+}
