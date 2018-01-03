@@ -305,32 +305,27 @@ exports.updateadress = function (req, res, next) {
             }
             else {
 
+                Userdata.find({'_id' : _id}, function(err, res){
 
-
-                    Userdata.find({'_id' : _id}, function(err, res){
-
-                        if (err) {
-                            console.log("Error:" + err);
-                        }
-                        else {
-                            if(res.length == 0){
-                                Res.send({
-                                    "code":-1,
-                                    "info":""
-                                });
-                                return;
-                            }
-                            res[0].password = '';
+                    if (err) {
+                        console.log("Error:" + err);
+                    }
+                    else {
+                        if(res.length == 0){
                             Res.send({
-                                'code':0,
-                                'data':res[0],
-                                'info':'保存成功'
+                                "code":-1,
+                                "info":""
                             });
+                            return;
                         }
-                    });
-
-
-
+                        res[0].password = '';
+                        Res.send({
+                            'code':0,
+                            'data':res[0],
+                            'info':'保存成功'
+                        });
+                    }
+                });
             }
         });
     });

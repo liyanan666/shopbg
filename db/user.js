@@ -1,10 +1,9 @@
 /**
  * 用户信息
  */
-var mongoose = require('./db.js'),
+let mongoose = require('./db.js'),
     Schema = mongoose.Schema;
-
-var UserSchema = new Schema({
+let UserSchema = new Schema({
     introduction:{ type: String },//简介
     headportrait:{ type: String },
     username : { type: String },                 //用户账号
@@ -24,8 +23,32 @@ var UserSchema = new Schema({
     }] //地址
 });
 
-var Code = new Schema({ //验证码
-    code:{type:String}
-})
+let BusinessSchema = new Schema({
+    shopname:{type: String }, //店铺名称
+    mainbusiness:{type: String },//主营业务
+    buessname:{type: String },
+    buesssex:{type: String },
+    buessphone:{type: String },
+    buessschool:{type: String },
+    buessbirth:{type: String },
+    buessidNumber:{type: String },
+    buessintroduction:{type: String },
+    buesslogo:{type: String },
+    buessidPhoto:{type: Array },
+    userid:{type: String }
+
+});
+
+let ProductSchema = new Schema({
+    productname:{type:String},
+    productprice:{type:Number},
+    productPromotionprice:{type:Number},
+    productclassification:{type:String},
+    productimg:{type:String},
+    productdetailimg:{type:Array},
+    priductintroduct:{type:String}
+});
+
 module.exports.User = mongoose.model('User',UserSchema);
-module.exports.Code = mongoose.model('Code',Code);
+module.exports.Business = mongoose.model('Business',BusinessSchema);
+module.exports.Product = mongoose.model('Product',ProductSchema);

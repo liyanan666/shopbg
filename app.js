@@ -1,8 +1,10 @@
-var express = require("express");
-var app = express();
-var router = require("./router/router.js");
+let express = require("express");
+let app = express();
 
-var session = require('express-session');
+let router = require("./router/router.js");
+let buess = require("./router/buess.js");
+
+let session = require('express-session');
 app.use(session({
     secret: 'keyboard cat',
     resave: false,
@@ -28,6 +30,7 @@ app.post('/uploadimg',router.uploadimg);//上传图片
 app.post('/saveadress',router.saveadress);//保存收货地址
 app.post('/delateadress',router.delateadress);//删除收货地址
 app.post('/updateadress',router.updateadress);//更新收货地址
+app.post('/tobuess',buess.tobuess);//更新收货地址
 
 var server = app.listen(3000,function () {
     var host = server.address().address;
