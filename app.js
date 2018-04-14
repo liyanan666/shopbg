@@ -1,22 +1,40 @@
-var express = require("express");
-var app = express();
+let express = require("express");
+let app = express();
 
-app.all('*', function(req, res, next) {//允许跨域
+let router = require("./router/router.js");
+let buess = require("./router/buess.js");
+
+let session = require('express-session');
+app.use(session({
+    secret: 'keyboard cat',
+    resave: false,
+    saveUninitialized: true
+}));
+
+app.all('*', function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
-    res.header("Access-Control-Allow-Headers", "Content-Type,Content-Length, Authorization, Accept,X-Requested-With");
+    res.header("Access-Control-Allow-Headers", "X-Requested-With");
     res.header("Access-Control-Allow-Methods","PUT,POST,GET,DELETE,OPTIONS");
     res.header("X-Powered-By",' 3.2.1')
-    if(req.method=="OPTIONS") res.send(200);/*让options请求快速返回*/
-    else  next();
+    next();
 });
+//静态文件
+app.use('/',express.static('./shop'));
+app.use("/avatar",express.static("./avatar"));
+//接口
+app.get('/code',router.getcode);//获取验证码
+app.post('/login',router.login); //登陆
+app.post('/registuser',router.regist); //注册
+app.post('/changeuserinfo',router.changeuserinfo);//更改用户信息
+app.post('/uploadimg',router.uploadimg);//上传图片
+app.post('/saveadress',router.saveadress);//保存收货地址
+app.post('/delateadress',router.delateadress);//删除收货地址
+app.post('/updateadress',router.updateadress);//更新收货地址
+app.post('/tobuess',buess.tobuess);//更新收货地址
 
+var server = app.listen(3000,function () {
+    var host = server.address().address;
+    var port = server.address().port;
 
-var router = require("./router/router.js");
-
-app.use('/', express.static('./'));
-
-
-
-app.get('/',router.showIndex);//显示首页
-app.post('/registuser',router.regist);
-app.listen(3000);
+    console.log('Example app listening at http://%s:%s', host, port);
+});
