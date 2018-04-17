@@ -2,8 +2,52 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="51541b78-6990-4f00-b925-a02e3cb21c08" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/package-lock.json" afterPath="$PROJECT_DIR$/package-lock.json" />
-      <change beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/avatar/1523956285.3865893.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/avatar/1523956344.0530105.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/avatar/1523956348.5728893.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/avatar/1523956452.776918.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/avatar/1523956457.082818.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/mongodata/collection-0-5852400817957711064.wt" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/mongodata/collection-2-5852400817957711064.wt" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/mongodata/collection-4-5852400817957711064.wt" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/mongodata/collection-7-5852400817957711064.wt" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/mongodata/collection-9-5852400817957711064.wt" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/mongodata/diagnostic.data/metrics.2018-04-17T08-56-57Z-00000" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/mongodata/index-1-5852400817957711064.wt" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/mongodata/index-10-5852400817957711064.wt" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/mongodata/index-3-5852400817957711064.wt" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/mongodata/index-5-5852400817957711064.wt" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/mongodata/index-6-5852400817957711064.wt" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/mongodata/index-8-5852400817957711064.wt" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/mongodata/journal/WiredTigerLog.0000000001" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/mongodata/WiredTiger" afterPath="$PROJECT_DIR$/mongodata/WiredTiger" />
+      <change beforePath="$PROJECT_DIR$/mongodata/WiredTiger.turtle" afterPath="$PROJECT_DIR$/mongodata/WiredTiger.turtle" />
+      <change beforePath="$PROJECT_DIR$/mongodata/WiredTiger.wt" afterPath="$PROJECT_DIR$/mongodata/WiredTiger.wt" />
+      <change beforePath="$PROJECT_DIR$/mongodata/_mdb_catalog.wt" afterPath="$PROJECT_DIR$/mongodata/_mdb_catalog.wt" />
+      <change beforePath="$PROJECT_DIR$/mongodata/collection-0--4486085809161250453.wt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/mongodata/collection-0-1622683161714383181.wt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/mongodata/collection-0-8923423310187163336.wt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/mongodata/collection-2--4486085809161250453.wt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/mongodata/collection-4--4486085809161250453.wt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/mongodata/diagnostic.data/metrics.2017-12-22T05-15-56Z-00000" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/mongodata/diagnostic.data/metrics.2017-12-22T06-47-57Z-00000" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/mongodata/diagnostic.data/metrics.2017-12-25T07-01-12Z-00000" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/mongodata/diagnostic.data/metrics.2017-12-26T03-01-18Z-00000" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/mongodata/diagnostic.data/metrics.2017-12-27T01-47-33Z-00000" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/mongodata/diagnostic.data/metrics.2017-12-28T02-28-54Z-00000" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/mongodata/diagnostic.data/metrics.2018-01-02T01-53-24Z-00000" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/mongodata/diagnostic.data/metrics.2018-01-02T05-37-46Z-00000" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/mongodata/diagnostic.data/metrics.2018-01-03T01-52-05Z-00000" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/mongodata/index-1--4486085809161250453.wt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/mongodata/index-1-1622683161714383181.wt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/mongodata/index-1-8923423310187163336.wt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/mongodata/index-3--4486085809161250453.wt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/mongodata/index-5--4486085809161250453.wt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/mongodata/index-6--4486085809161250453.wt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/mongodata/journal/WiredTigerLog.0000000009" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/mongodata/sizeStorer.wt" afterPath="$PROJECT_DIR$/mongodata/sizeStorer.wt" />
+      <change beforePath="$PROJECT_DIR$/router/router.js" afterPath="$PROJECT_DIR$/router/router.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -17,21 +61,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="648">
-              <caret line="36" column="26" lean-forward="false" selection-start-line="36" selection-start-column="26" selection-end-line="36" selection-end-column="26" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="router.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="router.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/router/router.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3600">
-              <caret line="200" column="17" lean-forward="false" selection-start-line="200" selection-start-column="17" selection-end-line="200" selection-end-column="17" />
+            <state relative-caret-position="144">
+              <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -42,26 +76,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1368">
               <caret line="76" column="0" lean-forward="false" selection-start-line="76" selection-start-column="0" selection-end-line="76" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="user.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/db/user.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="688">
-              <caret line="47" column="23" lean-forward="true" selection-start-line="47" selection-start-column="23" selection-end-line="47" selection-end-column="23" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="package.json" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/package.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="414">
-              <caret line="23" column="3" lean-forward="true" selection-start-line="23" selection-start-column="3" selection-end-line="23" selection-end-column="3" />
               <folding />
             </state>
           </provider>
@@ -93,11 +107,11 @@
         <option value="$PROJECT_DIR$/db/operation.js" />
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/views/index.ejs" />
-        <option value="$PROJECT_DIR$/router/router.js" />
         <option value="$PROJECT_DIR$/db/buess.js" />
         <option value="$PROJECT_DIR$/app.js" />
         <option value="$PROJECT_DIR$/db/user.js" />
         <option value="$PROJECT_DIR$/router/buess.js" />
+        <option value="$PROJECT_DIR$/router/router.js" />
       </list>
     </option>
   </component>
@@ -124,10 +138,11 @@
   <component name="NodeModulesDirectoryManager">
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="773" />
-    <option name="width" value="974" />
-    <option name="height" value="1047" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1066" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
@@ -147,6 +162,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -157,24 +174,12 @@
             <path>
               <item name="shopbg" type="b2602c69:ProjectViewProjectNode" />
               <item name="shopbg" type="462c0819:PsiDirectoryNode" />
-              <item name="db" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="shopbg" type="b2602c69:ProjectViewProjectNode" />
-              <item name="shopbg" type="462c0819:PsiDirectoryNode" />
               <item name="router" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="shopbg" type="b2602c69:ProjectViewProjectNode" />
-              <item name="shopbg" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -227,25 +232,31 @@
       <workItem from="1514428037727" duration="8706000" />
       <workItem from="1514857958262" duration="15951000" />
       <workItem from="1514944983067" duration="10271000" />
-      <workItem from="1523529187927" duration="321000" />
+      <workItem from="1523529187927" duration="1092000" />
+      <workItem from="1523582797849" duration="609000" />
+      <workItem from="1523611894232" duration="1152000" />
+      <workItem from="1523859281146" duration="104000" />
+      <workItem from="1523953446917" duration="609000" />
+      <workItem from="1523955713770" duration="2372000" />
+      <workItem from="1523960590650" duration="21000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="96850000" />
+    <option name="totallyTimeSpent" value="102488000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1066" extended-state="7" />
+    <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2265625" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15989584" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25079367" sideWeight="0.50208336" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22361547" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19958203" sideWeight="0.49791667" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12906611" sideWeight="0.49791667" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -273,19 +284,10 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/db/user.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="399">
           <caret line="21" column="20" lean-forward="false" selection-start-line="21" selection-start-column="20" selection-end-line="21" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -293,7 +295,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="6213">
           <caret line="327" column="19" lean-forward="true" selection-start-line="327" selection-start-column="19" selection-end-line="327" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -301,7 +302,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="513">
           <caret line="27" column="0" lean-forward="true" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -309,7 +309,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
           <caret line="17" column="11" lean-forward="false" selection-start-line="17" selection-start-column="4" selection-end-line="17" selection-end-column="11" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -317,7 +316,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3762">
           <caret line="198" column="23" lean-forward="true" selection-start-line="198" selection-start-column="23" selection-end-line="198" selection-end-column="23" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -325,7 +323,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="456">
           <caret line="24" column="38" lean-forward="false" selection-start-line="24" selection-start-column="29" selection-end-line="24" selection-end-column="38" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -333,7 +330,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3268">
           <caret line="172" column="9" lean-forward="false" selection-start-line="172" selection-start-column="9" selection-end-line="172" selection-end-column="9" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -341,7 +337,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="437">
           <caret line="23" column="17" lean-forward="false" selection-start-line="23" selection-start-column="17" selection-end-line="23" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -357,7 +352,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="608">
           <caret line="32" column="18" lean-forward="true" selection-start-line="32" selection-start-column="18" selection-end-line="32" selection-end-column="18" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -365,7 +359,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="38">
           <caret line="2" column="20" lean-forward="false" selection-start-line="2" selection-start-column="20" selection-end-line="2" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -373,7 +366,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="342">
           <caret line="18" column="27" lean-forward="true" selection-start-line="18" selection-start-column="27" selection-end-line="18" selection-end-column="27" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -381,7 +373,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -389,7 +380,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="418">
           <caret line="22" column="47" lean-forward="false" selection-start-line="22" selection-start-column="47" selection-end-line="22" selection-end-column="47" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -397,7 +387,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="304">
           <caret line="16" column="31" lean-forward="true" selection-start-line="16" selection-start-column="31" selection-end-line="16" selection-end-column="31" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -413,7 +402,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="3" lean-forward="true" selection-start-line="0" selection-start-column="3" selection-end-line="0" selection-end-column="3" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -429,7 +417,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="38">
           <caret line="2" column="2" lean-forward="false" selection-start-line="2" selection-start-column="2" selection-end-line="2" selection-end-column="2" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -437,7 +424,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="266">
           <caret line="14" column="17" lean-forward="true" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -460,7 +446,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="38">
           <caret line="2" column="2" lean-forward="true" selection-start-line="2" selection-start-column="2" selection-end-line="2" selection-end-column="2" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -468,7 +453,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="152">
           <caret line="8" column="17" lean-forward="false" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -491,7 +475,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="38">
           <caret line="2" column="2" lean-forward="true" selection-start-line="2" selection-start-column="2" selection-end-line="2" selection-end-column="2" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -499,7 +482,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="152">
           <caret line="8" column="17" lean-forward="true" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -515,7 +497,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -552,11 +533,41 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/db/buess.js" />
+    <entry file="file://$PROJECT_DIR$/avatar/1514430080.6105611.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/avatar/1514961792.1592596.jpg" />
+    <entry file="file://$PROJECT_DIR$/avatar/1514972159.113929.png" />
+    <entry file="file://$PROJECT_DIR$/avatar/1514961222.6849163.jpg" />
+    <entry file="file://$PROJECT_DIR$/avatar/1514961294.1279569.jpg" />
+    <entry file="file://$PROJECT_DIR$/db/user.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="577">
+          <caret line="47" column="23" lean-forward="false" selection-start-line="47" selection-start-column="23" selection-end-line="47" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="648">
+        <state relative-caret-position="451">
           <caret line="36" column="26" lean-forward="false" selection-start-line="36" selection-start-column="26" selection-end-line="36" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="22" column="17" lean-forward="false" selection-start-line="22" selection-start-column="17" selection-end-line="22" selection-end-column="17" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package-lock.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -570,33 +581,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/router/router.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3600">
-          <caret line="200" column="17" lean-forward="false" selection-start-line="200" selection-start-column="17" selection-end-line="200" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/avatar/1514430080.6105611.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/avatar/1514961792.1592596.jpg" />
-    <entry file="file://$PROJECT_DIR$/avatar/1514972159.113929.png" />
-    <entry file="file://$PROJECT_DIR$/avatar/1514961222.6849163.jpg" />
-    <entry file="file://$PROJECT_DIR$/avatar/1514961294.1279569.jpg" />
-    <entry file="file://$PROJECT_DIR$/db/user.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="688">
-          <caret line="47" column="23" lean-forward="true" selection-start-line="47" selection-start-column="23" selection-end-line="47" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="23" column="3" lean-forward="true" selection-start-line="23" selection-start-column="3" selection-end-line="23" selection-end-column="3" />
+        <state relative-caret-position="144">
+          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
           <folding />
         </state>
       </provider>

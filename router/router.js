@@ -5,7 +5,6 @@ var fs = require("fs");
 
 var User = require("../db/user.js");
 var Userdata = User.User;
-var sessioncode = '';
 
 
 exports.getcode = function (req, res, next) {  //获取验证码
@@ -26,33 +25,17 @@ exports.regist = function (req, res, next) { //注册
         var password = fields.password;
         var code = fields.code;
         var school = fields.school;
-        var age = fields.age;
-        var phone = fields.phone;
-        var sex = fields.sex;
-        var nickname = fields.nickname;
-        var email = fields.email;
-        var introduction = fields.introduction;
-        var headportrait = fields.headportrait;
         Userdata.find({'username' : username}, function(err, res){
-            console.log(1);
             if (err) {
                 console.log("Error:" + err);
             }
             else {
                 if(res.length == 0){
                     var user = new Userdata({
-                        introduction:introduction,//简介
-                        headportrait:headportrait,
                         username : username,                 //用户账号
                         password: password,                            //密码
                         school:school,//学校
-                        age:age,//年龄
-                        phone:phone,//电话
-                        sex:sex,//性别
-                        nickname:nickname,//昵称
-                        email:email,//邮箱
                         isbuess:0,
-                        adressval:[]
                     });
                     user.save(function (err, res) { //保存
 
