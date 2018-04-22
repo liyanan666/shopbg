@@ -34,33 +34,13 @@ exports.tobuess = function (req, res, next) {  //成为商家
                     if (err) {
                         Res.send({
                             "code":-1,
-                            "info":"保存失败"
+                            "info":"提交失败"
                         });
-                        console.log("Error:" + err);
                     }
                     else {
-                        Userdata.findByIdAndUpdate(id,{isbuess:1},function () {
-                            Userdata.find({'_id' : id}, function(err, res){
-
-                                if (err) {
-                                    console.log("Error:" + err);
-                                }
-                                else {
-                                    if(res.length == 0){
-                                        Res.send({
-                                            "code":-1,
-                                            "info":""
-                                        });
-                                        return;
-                                    }
-                                    res[0].password = '';
-                                    Res.send({
-                                        'code':0,
-                                        'data':res[0],
-                                        'info':'保存成功'
-                                    });
-                                }
-                            });
+                    	Res.send({
+                            "code":0,
+                            "info":"已提交审核，审核进度可以在审核中心查看"
                         });
                     }
                 });
