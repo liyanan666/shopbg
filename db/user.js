@@ -3,7 +3,7 @@
  */
 let mongoose = require('./db.js'),
     Schema = mongoose.Schema;
-let UserSchema = new Schema({
+let UserSchema = new Schema({  //用户数据表
     introduction:{ type: String },//简介
     headportrait:{ type: String },
     username : { type: String },                 //用户账号
@@ -23,7 +23,7 @@ let UserSchema = new Schema({
     }] //地址
 });
 
-let BusinessSchema = new Schema({
+let BusinessSchema = new Schema({  //店铺数据表
     shopname:{type: String }, //店铺名称
     mainbusiness:{type: String },//主营业务
     buessname:{type: String },
@@ -39,7 +39,7 @@ let BusinessSchema = new Schema({
 
 });
 
-let ProductSchema = new Schema({
+let ProductSchema = new Schema({  //产品数据表
     productname:{type:String},
     productprice:{type:Number},
     productPromotionprice:{type:Number},
@@ -49,6 +49,11 @@ let ProductSchema = new Schema({
     priductintroduct:{type:String}
 });
 
+let ApplyWork = new Schema({  //申请兼职
+
+})
+
 module.exports.User = mongoose.model('User',UserSchema);
 module.exports.Business = mongoose.model('Business',BusinessSchema);
 module.exports.Product = mongoose.model('Product',ProductSchema);
+module.exports.Work = mongoose.model('Work',ApplyWork);
