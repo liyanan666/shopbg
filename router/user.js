@@ -1,79 +1,84 @@
 let express = require("express");
 let app = express();
 
-const formidable = require("formidable");
-const captchapng = require('captchapng2');
-var path = require("path");
-var fs = require("fs");
+let formidable = require("formidable");
+let captchapng = require('captchapng2');
+let path = require("path");
+let fs = require("fs");
 
-var User = require("../db/user.js");
-var Userdata = User.User;
-var md5 = require("../middlewares/md5.js");
+let User = require("../db/user.js");
+let Userdata = User.User;
+let md5 = require("../middlewares/md5.js");
 
-let session = require('express-session');
-app.use(session({
-    secret: 'keyboard cat',
-    resave: false,
-    saveUninitialized: true
-}));
+
+
+//var jwt = require('jsonwebtoken'); //token生成
 
 exports.getcode = function (req, res, next) {  //获取验证码
     let rand = parseInt(Math.random() * 9000 + 1000);
     req.session.code = rand;
-    console.log(req.session.code);
     let png = new captchapng(80, 30, rand);
     res.writeHead(200, { 'Content-Type': 'image/png'});
     res.end(png.getBuffer());
 };
 
+//检查验证码是否正确
+function checkcode(req,res,code){
+    if(req.session.code == code){
+        return true;
+    }
+    return false;
+}
+function resData(res,codeStatus,info){
+    res.send({
+        "code":codeStatus,
+        "info":info
+    });
+}
+
 exports.regist = function (req, res, next) { //注册
     var Res = res;
     var form = new formidable.IncomingForm();
     form.parse(req, function (err, fields, files) {
-        //得到表单之后做的事情
-        var username = fields.username;
-        var password = fields.password;
-        password = md5(md5(password).substr(4,6) + md5(password));
         var code = fields.code;
-        var school = fields.school;
-        Userdata.find({'username' : username}, function(err, res){
-            if (err) {
-                console.log("Error:" + err);
-            }
-            else {
-                if(res.length == 0){
-                    var user = new Userdata({
-                        username : username,                 //用户账号
-                        password: password,                            //密码
-                        school:school,//学校
-                        isbuess:0,
-                    });
-                    user.save(function (err, res) { //保存
-
-                        if (err) {
-                            Res.send({
-                                "code":-1,
-                                "info":"保存失败"
-                            });
-                            console.log("Error:" + err);
-                        }
-                        else {
-                            Res.send({
-                                "code":0,
-                                "info":"保存成功"
-                            });
-                            console.log("Res:" + res);
-                        }
-
-                    });
-                }else{
-                    Res.send({
-                        "code":-1,
-                        "info":"用户名已存在"
-                    });
+        //得到表单之后做的事情
+        if(checkcode(req,res,code)){
+            console.log(code);
+            var username = fields.username;
+            var password = fields.password;
+            password = md5(md5(password).substr(4,6) + md5(password));
+            var school = fields.school;
+            Userdata.find({'username' : username}, function(err, res){
+                if (err) {
+                    console.log("Error:" + err);
                 }
-            }
-        });
+                else {
+                    if(res.length == 0){
+                        var user = new Userdata({
+                            username : username,                 //用户账号
+                            password: password,                            //密码
+                            school:school,//学校
+                            isbuess:0,
+                        });
+                        user.save(function (err, res) { //保存
+
+                            if (err) {
+                                resData(Res,-1,'保存失败');
+                            }
+                            else {
+                                resData(Res,0,'保存成功');
+                            }
+
+                        });
+                    }else{
+                        resData(Res,-1,'用户名已存在');
+                    }
+                }
+            });
+        }else{
+            resData(Res,-1,'验证码错误');
+        }
+        
     });
 };
 
@@ -93,22 +98,13 @@ exports.login = function (req, res, next) {  //登陆
             }
             else {
                 if(res.length == 0){
-                    Res.send({
-                        "code":-1,
-                        "info":"未注册"
-                    });
+                    resData(Res,-1,"未注册");
                 }else if(password == res[0].password){
-                    req.session.user = res[0].username;
+                    req.session.username = res[0].username;
                     res[0].password = '';
-                    Res.send({
-                        "code":0,
-                        "info":res[0]
-                    });
+                    resData(Res,0,res[0]);
                 }else if(password != res[0].password){
-                    Res.send({
-                        "code":-1,
-                        "info":'用户名或密码不正确'
-                    });
+                    resData(Res,-1,"用户名或密码不正确");
                 }
             }
         });
@@ -169,6 +165,7 @@ exports.uploadimg = function (req,res,next) {
 };
 
 exports.changeuserinfo = function (req, res, next){
+    console.log(req,res,next)
     if(!req.session.username){
         res.send({
             "code":-1,

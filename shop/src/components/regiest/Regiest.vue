@@ -43,7 +43,7 @@
     export default{
         data(){
             return {
-            	imgsrc:'http://10.0.0.12:3000/code',
+            	imgsrc:''+this.GLOBAL.host+'/user/code?id='+Math.random(),
                 username:'',
                 psw:'',
                 psw2:'',
@@ -61,9 +61,6 @@
                 ],
             }
         },
-        mounted:function(){
-        	
-        },
         methods:{
             onCollageChange(picker, values){
                 this.modelschool = values.toString();
@@ -73,36 +70,40 @@
                 this.collageVisible = false;
             },
             changecode(){
-            	this.imgsrc = ''+this.GLOBAL.host+'/code?id='+Math.random();
+            	this.imgsrc = ''+this.GLOBAL.host+'/user/code?id='+Math.random();
             },
             regist(){
             	var _this = this;
-            	if(this.psw != this.psw2){
-            		MessageBox('提示', "密码不一致，请重新输入");
+
+            	if(this.username.length<6 || this.username.length>12){
+            		MessageBox('提示', "用户名长度需在6-12位之间");
             		return;
             	}
+                if(!this.psw || !this.psw2){
+                    MessageBox('提示', "请输入密码");
+                    return;
+                }
+                if(this.psw != this.psw2){
+                    MessageBox('提示', "密码不一致，请重新输入");
+                    return;
+                }
             	if(this.psw!="" && this.username!="" && this.psw2!="" && this.code!=""){
             		$.ajax({
 	            		type:"post",
-	            		url:""+this.GLOBAL.host+"/registuser",
+	            		url:""+this.GLOBAL.host+"/user/registuser",
 	            		async:true,
+	            		xhrFields: {withCredentials: true},
+	            		crossDomain: true,
 	            		data:{
 	            			username : this.username,
 		            		password : this.psw,
 		            		code : this.code,
-		            		school:this.school,
-		            		age:"",//年龄
-	                        phone:"",//电话
-	                        sex:"",//性别
-	                        nickname:"",//昵称
-	                        email:"",//邮箱
-	                        introduction:"",//简介
-	                        headportrait:""      //头像
+		            		school:this.school
 	            		},
 	            		success:function(data){
 	            			if(data.code == -1){
 	            				MessageBox('提示', data.info);
-	            				return;
+	            				return;ReferenceError
 	            			}
 	            			_this.$router.push('/login');
 	            		}
