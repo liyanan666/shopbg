@@ -1,16 +1,17 @@
-var mongoose = require('mongoose'),
-    DB_URL = 'mongodb://localhost:27017/mongoose';
+var mongoose = require('mongoose');
+
+var config = require('../config.js');
 
 /**
  * 连接
  */
-mongoose.connect(DB_URL);
+mongoose.connect(config.db);
 
 /**
  * 连接成功
  */
 mongoose.connection.on('connected', function () {
-    console.log('链接成功' + DB_URL);
+    console.log('链接成功' + config.db);
 });
 
 /**
