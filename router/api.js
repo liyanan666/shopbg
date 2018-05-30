@@ -1,7 +1,9 @@
-const qiniu = require("qiniu");
-const config = require('../config.js');
+let qiniu = require("qiniu");
+let config = require('../config.js');
+let formidable = require("formidable");
 
 exports.qiniutoken = function(req, res, next){
+	var form = new formidable.IncomingForm();
 	var accessKey = config.qn_access.accessKey;
     var secretKey = config.qn_access.secretKey;
     var mac = new qiniu.auth.digest.Mac(accessKey, secretKey);
@@ -16,19 +18,20 @@ exports.qiniutoken = function(req, res, next){
 	
 	var formUploader = new qiniu.form_up.FormUploader(config);
 	var putExtra = new qiniu.form_up.PutExtra();
-	var key='test.txt';
-	formUploader.put(uploadToken, key, "hello world", putExtra, function(respErr,
-	  respBody, respInfo) {
-	  if (respErr) {
+	var key = Date.parse(new Date()) + "_" + Math.round(Math.random() * 100);
+	
+	console.log(req);
+	/*formUploader.put(uploadToken, key, "hello world", putExtra, function(respErr,respBody,respInfo) {
+	  	if (respErr) {
 	    throw respErr;
-	  }
-	  if (respInfo.statusCode == 200) {
-	    console.log(respBody);
-	  } else {
-	    console.log(respInfo.statusCode);
-	    console.log(respBody);
-	  }
-	});
+	  	}
+	  	if (respInfo.statusCode == 200) {
+	    	console.log(respBody);
+	  	} else {
+	    	console.log(respInfo.statusCode);
+	    	console.log(respBody);
+	  	}
+	});*/
     res.send({
     	"code":0,
     	"token":uploadToken,
