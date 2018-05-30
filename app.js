@@ -25,18 +25,19 @@ app.all('*', function(req, res, next) {
 });
 
 // log
-var requestLog = require('./middlewares/request_log');
+let requestLog = require('./middlewares/request_log');
 //require('./middlewares/mongoose_log'); // 打印 mongodb 查询日志
 //接口
-let user = require('./router.js');
+let router = require('./router.js');
+
 
 // 打印log
 app.use(requestLog);
 //接口
-app.use('/user', user);
+app.use('/', router);
 
 //静态文件
-app.use('/',express.static('./shop'));
+app.use('/shop',express.static('./shop'));
 app.use("/avatar",express.static("./avatar"));
 
 
