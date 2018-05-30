@@ -1,2 +1,4 @@
 /node_modules/
 /mongodata/
+package-lock.json
+.idea/workspace.xml
