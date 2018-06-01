@@ -16,6 +16,6 @@ router.post('/user/delateadress',user.delateadress);//删除收货地址
 router.post('/user/updateadress',user.updateadress);//更新收货地址
 router.post('/user/tobuess',buess.tobuess);//更新收货地址
 //公共接口
-router.get('/api/qiniutoken',api.qiniutoken);//更新收货地址
+router.post('/api/qiniutoken',api.qiniutoken);//更新收货地址
 
 module.exports = router;
