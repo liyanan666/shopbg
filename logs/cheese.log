@@ -102,3 +102,39 @@ Started 2018-05-31T12:03:42.343Z POST /api/qiniutoken ::ffff:127.0.0.1
 
 Started 2018-05-31T12:05:57.475Z POST /api/qiniutoken ::ffff:127.0.0.1
 [2018-05-31 20:05:57.476] [INFO] cheese - Completed 200 undefined
+[2018-06-01 10:53:23.845] [INFO] cheese - 
+
+Started 2018-06-01T02:53:23.844Z POST /api/qiniutoken ::ffff:127.0.0.1
+[2018-06-01 10:53:23.853] [INFO] cheese - Completed 200 undefined
+[2018-06-01 10:54:10.108] [INFO] cheese - 
+
+Started 2018-06-01T02:54:10.108Z POST /api/qiniutoken ::ffff:127.0.0.1
+[2018-06-01 10:54:10.110] [INFO] cheese - Completed 200 undefined
+[2018-06-01 10:54:44.231] [INFO] cheese - 
+
+Started 2018-06-01T02:54:44.231Z POST /api/qiniutoken ::ffff:127.0.0.1
+[2018-06-01 10:54:44.233] [INFO] cheese - Completed 200 undefined
+[2018-06-01 10:55:06.321] [INFO] cheese - 
+
+Started 2018-06-01T02:55:06.321Z POST /api/qiniutoken ::ffff:127.0.0.1
+[2018-06-01 10:55:06.322] [INFO] cheese - Completed 200 undefined
+[2018-06-01 10:57:10.979] [INFO] cheese - 
+
+Started 2018-06-01T02:57:10.979Z POST /api/qiniutoken ::ffff:127.0.0.1
+[2018-06-01 10:57:10.980] [INFO] cheese - Completed 200 undefined
+[2018-06-01 11:00:49.940] [INFO] cheese - 
+
+Started 2018-06-01T03:00:49.940Z POST /api/qiniutoken ::ffff:127.0.0.1
+[2018-06-01 11:00:49.941] [INFO] cheese - Completed 200 undefined
+[2018-06-01 11:01:34.812] [INFO] cheese - 
+
+Started 2018-06-01T03:01:34.812Z POST /api/qiniutoken ::ffff:127.0.0.1
+[2018-06-01 11:01:34.814] [INFO] cheese - Completed 200 undefined
+[2018-06-01 11:02:10.132] [INFO] cheese - 
+
+Started 2018-06-01T03:02:10.132Z POST /api/qiniutoken ::ffff:127.0.0.1
+[2018-06-01 11:02:10.133] [INFO] cheese - Completed 200 undefined
+[2018-06-01 11:03:17.855] [INFO] cheese - 
+
+Started 2018-06-01T03:03:17.855Z POST /api/qiniutoken ::ffff:127.0.0.1
+[2018-06-01 11:03:17.857] [INFO] cheese - Completed 200 undefined
