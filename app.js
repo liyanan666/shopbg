@@ -41,7 +41,7 @@ app.use('/shop',express.static('./shop'));
 app.use("/avatar",express.static("./avatar"));
 
 
-var server = app.listen(8080,function () {
+var server = app.listen(8070,function () {
     var host = server.address().address;
     var port = server.address().port;
 

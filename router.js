@@ -10,7 +10,6 @@ router.get('/user/code',user.getcode);//获取验证码
 router.post('/user/login',user.login); //登陆
 router.post('/user/registuser',user.regist); //注册
 router.post('/user/changeuserinfo',user.changeuserinfo);//更改用户信息
-router.post('/user/uploadimg',user.uploadimg);//上传图片
 router.post('/user/saveadress',user.saveadress);//保存收货地址
 router.post('/user/delateadress',user.delateadress);//删除收货地址
 router.post('/user/updateadress',user.updateadress);//更新收货地址

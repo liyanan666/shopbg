@@ -47,7 +47,7 @@ var config = {
         accessKey: 'aENbpcN2KYXfefARtoXLCy0ryAevAXyrnrITUuca',
         secretKey: 'ZlnEaRq41mRSwKR4UIC4fS6JOItUP7LRMnL1Rb9W',
         bucket: 'shop-li',
-        origin: 'p9h2tfukz.bkt.clouddn.com',
+        origin: 'qiniu.bestpiaopiao.cn',
         // 如果vps在国外，请使用 http://up.qiniug.com/ ，这是七牛的国际节点
         // 如果在国内，此项请留空
         uploadURL: 'http://xxxxxxxx',
