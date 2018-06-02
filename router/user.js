@@ -10,9 +10,7 @@ let User = require("../db/user.js");
 let Userdata = User.User;
 let md5 = require("../middlewares/md5.js");
 
-
-
-//var jwt = require('jsonwebtoken'); //token生成
+let jwt = require('jsonwebtoken'); //token生成
 
 exports.getcode = function (req, res, next) {  //获取验证码
     let rand = parseInt(Math.random() * 9000 + 1000);
@@ -100,9 +98,17 @@ exports.login = function (req, res, next) {  //登陆
                 if(res.length == 0){
                     resData(Res,-1,"未注册");
                 }else if(password == res[0].password){
-                    req.session.username = res[0].username;
+                	var token = jwt.sign({ data: res[0]._id,exp: Math.floor(Date.now() / 1000) + (60 * 60 * 12)	 }, 'secret');
+                	
+                	console.log(token);
+//                  req.session.username = res[0].username;
                     res[0].password = '';
-                    resData(Res,0,res[0]);
+                    
+                    Res.send({
+				        "code":0,
+				        "info":res[0],
+				        "token":token
+				    });
                 }else if(password != res[0].password){
                     resData(Res,-1,"用户名或密码不正确");
                 }
@@ -110,68 +116,10 @@ exports.login = function (req, res, next) {  //登陆
         });
     });
 };
-exports.uploadimg = function (req,res,next) {
-    var form = new formidable.IncomingForm();
-    form.uploadDir = path.normalize(__dirname + "/../avatar");  //设置文件的缓存路径
-    form.parse(req, function (err, fields, files) {
 
-
-        let extName = '';  //后缀名
-        switch (files.file.type) {
-            case 'image/pjpeg':
-                extName = 'jpg';
-                break;
-            case 'image/jpeg':
-                extName = 'jpg';
-                break;
-            case 'image/png':
-                extName = 'png';
-                break;
-            case 'image/x-png':
-                extName = 'png';
-                break;
-        }
-
-        if (extName.length == 0) {
-            res.send({
-                "code":-1,
-                "info":'只支持png和jpg格式图片'
-            });
-            //删除缓存区的文件
-            let tempPath = files.file.path;
-            fs.unlink(tempPath, function (err) {
-                if (err) throw err;
-                console.log('成功')
-            });
-        }else{
-            let oldpath = files.file.path;
-            var filename = Math.random()+Date.parse(new Date())/1000;
-            let newpath = path.normalize(__dirname + "/../avatar")+ "/" + filename+'.'+extName;
-            let returnpath = "/avatar/" + filename+'.'+extName;
-            fs.rename(oldpath, newpath, function (err) {
-                if (err) {
-                    res.send("失败");
-                    return;
-                }
-                res.send({
-                    'code':0,
-                    'url':returnpath,
-                    'info':'上传成功'
-                })
-            });
-
-        }
-    });
-};
 
 exports.changeuserinfo = function (req, res, next){
-    console.log(req,res,next)
-    if(!req.session.username){
-        res.send({
-            "code":-1,
-            "info":"请先登录"
-        })
-    }
+   
     var Res = res;
     var form = new formidable.IncomingForm();
     form.parse(req, function (err, fields, files) {
