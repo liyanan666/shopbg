@@ -27,9 +27,10 @@ function checkcode(req,res,code){
     }
     return false;
 }
-function resData(res,codeStatus,info){
+function resData(res,codeStatus,info,data){
     res.send({
         "code":codeStatus,
+        "data":data,
         "info":info
     });
 }
@@ -41,8 +42,8 @@ exports.regist = function (req, res, next) { //注册
         var code = fields.code;
         //得到表单之后做的事情
         if(checkcode(req,res,code)){
-            console.log(code);
             var username = fields.username;
+            //MD5加密
             var password = fields.password;
             password = md5(md5(password).substr(4,6) + md5(password));
             var school = fields.school;
@@ -61,20 +62,20 @@ exports.regist = function (req, res, next) { //注册
                         user.save(function (err, res) { //保存
 
                             if (err) {
-                                resData(Res,-1,'保存失败');
+                                resData(Res,-1,'保存失败','');
                             }
                             else {
-                                resData(Res,0,'保存成功');
+                                resData(Res,0,'保存成功','');
                             }
 
                         });
                     }else{
-                        resData(Res,-1,'用户名已存在');
+                        resData(Res,-1,'用户名已存在','');
                     }
                 }
             });
         }else{
-            resData(Res,-1,'验证码错误');
+            resData(Res,-1,'验证码错误','');
         }
         
     });
@@ -110,7 +111,7 @@ exports.login = function (req, res, next) {  //登陆
 				        "token":token
 				    });
                 }else if(password != res[0].password){
-                    resData(Res,-1,"用户名或密码不正确");
+                    resData(Res,-1,"用户名或密码不正确","");
                 }
             }
         });
@@ -119,37 +120,25 @@ exports.login = function (req, res, next) {  //登陆
 
 
 exports.changeuserinfo = function (req, res, next){
-   
     var Res = res;
     var form = new formidable.IncomingForm();
     form.parse(req, function (err, fields, files) {
         var _id = fields.id;
         Userdata.findByIdAndUpdate(_id,JSON.parse(fields.userinfo), function(err, res){
 
-
             Userdata.find({'_id' : _id}, function(err, res){
-
                 if (err) {
-                    console.log("Error:" + err);
+                	throw err;
                 }
                 else {
                     if(res.length == 0){
-                        Res.send({
-                            "code":-1,
-                            "info":""
-                        });
+                    	resData(Res,-1,'网络错误','');
                         return;
                     }
                     res[0].password = '';
-                    Res.send({
-                        'code':0,
-                        'data':res[0],
-                        'info':'保存成功'
-                    });
+                    resData(Res,0,'success',res[0]);
                 }
             });
-
-
         });
 
     });
@@ -173,18 +162,12 @@ exports.saveadress = function (req, res, next) {
                     }
                     else {
                         if(res.length == 0){
-                            Res.send({
-                                "code":-1,
-                                "info":""
-                            });
+                        	resData(Res,-1,'网络错误','');
+                          
                             return;
                         }
                         res[0].password = '';
-                        Res.send({
-                            'code':0,
-                            'data':res[0],
-                            'info':'保存成功'
-                        });
+                        resData(Res,0,'保存成功',res[0]);
                     }
                 });
             }
@@ -212,18 +195,12 @@ exports.delateadress = function (req, res, next) {
                     }
                     else {
                         if(res.length == 0){
-                            Res.send({
-                                "code":-1,
-                                "info":""
-                            });
+                        	resData(Res,-1,'网络错误','');
                             return;
                         }
                         res[0].password = '';
-                        Res.send({
-                            'code':0,
-                            'data':res[0],
-                            'info':'保存成功'
-                        });
+                        resData(Res,0,'保存成功',res[0]);
+                      
                     }
                 });
             }
@@ -260,18 +237,12 @@ exports.updateadress = function (req, res, next) {
                     }
                     else {
                         if(res.length == 0){
-                            Res.send({
-                                "code":-1,
-                                "info":""
-                            });
+                        	resData(Res,0,'网络错误','');
                             return;
                         }
                         res[0].password = '';
-                        Res.send({
-                            'code':0,
-                            'data':res[0],
-                            'info':'保存成功'
-                        });
+                        resData(Res,0,'保存成功',res[0]);
+                       
                     }
                 });
             }

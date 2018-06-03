@@ -8,13 +8,13 @@ let UserSchema = new Schema({  //用户数据表
     headportrait:{ type: String },
     username : { type: String },                 //用户账号
     password: { type: String },                            //密码
-    school:{ type: String },//学校
+    school:{ type: String,default:'郑州科技学院' },//学校
     age:{ type: String },//年龄
     phone:{ type: String },//电话
-    sex:{ type: String },//性别
+    sex:{ type: String,default:'男' },//性别
     nickname:{ type: String },//昵称
     email:{ type: String },//邮箱
-    isbuess:{ type: Number },//是否是商户
+    isbuess:{ type: Number,default:'0' },//是否是商户
     adressval:[{
         Consigneename:{type: String},
         Consigneephone:{type: String},
@@ -49,11 +49,6 @@ let ProductSchema = new Schema({  //产品数据表
     priductintroduct:{type:String}
 });
 
-let ApplyWork = new Schema({  //申请兼职
-
-})
-
 module.exports.User = mongoose.model('User',UserSchema);
 module.exports.Business = mongoose.model('Business',BusinessSchema);
 module.exports.Product = mongoose.model('Product',ProductSchema);
-module.exports.Work = mongoose.model('Work',ApplyWork);
