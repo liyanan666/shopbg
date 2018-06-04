@@ -16,10 +16,10 @@ exports.qiniutoken = function(req, res, next){
     var putPolicy = new qiniu.rs.PutPolicy(options);
     var uploadToken=putPolicy.uploadToken(mac);  //生成token
     
-     res.send({
-	    	"code":0,
-	    	"token":uploadToken,
-	    	"domain":config.qn_access.origin
+    res.send({
+    	"code":0,
+    	"token":uploadToken,
+    	"domain":config.qn_access.origin
 	})
 }
 
@@ -45,8 +45,6 @@ exports.sendmsg = function(req, res, next){
 	// 指定模板发送接口https地址
 	send_tpl_sms_uri = '/v2/sms/tpl_single_send.json';
 
-	
-	
 	
 	send_sms(send_sms_uri,apikey,mobile,text);
 	
@@ -84,7 +82,8 @@ exports.sendmsg = function(req, res, next){
 	    };
 	    var req = https.request(options, function (res) {  
 	        res.setEncoding('utf8');  
-	        res.on('data', function (chunk) {  
+	        res.on('data', function (chunk) { 
+	        	
 	            console.log('BODY: ' + chunk);  
 	        });  
 	    }); 

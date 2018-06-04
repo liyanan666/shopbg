@@ -9,8 +9,9 @@ let fs = require("fs");
 let User = require("../db/user.js");
 let Userdata = User.User;
 let md5 = require("../middlewares/md5.js");
-
 let jwt = require('jsonwebtoken'); //token生成
+
+let comontutils = require("../common/utils.js");  //公共方法
 
 exports.getcode = function (req, res, next) {  //获取验证码
     let rand = parseInt(Math.random() * 9000 + 1000);
@@ -20,20 +21,7 @@ exports.getcode = function (req, res, next) {  //获取验证码
     res.end(png.getBuffer());
 };
 
-//检查验证码是否正确
-function checkcode(req,res,code){
-    if(req.session.code == code){
-        return true;
-    }
-    return false;
-}
-function resData(res,codeStatus,info,data){
-    res.send({
-        "code":codeStatus,
-        "data":data,
-        "info":info
-    });
-}
+
 
 exports.regist = function (req, res, next) { //注册
     var Res = res;
@@ -62,20 +50,20 @@ exports.regist = function (req, res, next) { //注册
                         user.save(function (err, res) { //保存
 
                             if (err) {
-                                resData(Res,-1,'保存失败','');
+                                comontutils.resData(Res,-1,'保存失败','');
                             }
                             else {
-                                resData(Res,0,'保存成功','');
+                                comontutils.resData(Res,0,'保存成功','');
                             }
 
                         });
                     }else{
-                        resData(Res,-1,'用户名已存在','');
+                        comontutils.resData(Res,-1,'用户名已存在','');
                     }
                 }
             });
         }else{
-            resData(Res,-1,'验证码错误','');
+            comontutils.resData(Res,-1,'验证码错误','');
         }
         
     });
@@ -97,7 +85,7 @@ exports.login = function (req, res, next) {  //登陆
             }
             else {
                 if(res.length == 0){
-                    resData(Res,-1,"未注册");
+                    comontutils.comontutils.resData(Res,-1,"未注册");
                 }else if(password == res[0].password){
                 	var token = jwt.sign({ data: res[0]._id,exp: Math.floor(Date.now() / 1000) + (60 * 60 * 12)	 }, 'secret');
                 	
@@ -111,7 +99,7 @@ exports.login = function (req, res, next) {  //登陆
 				        "token":token
 				    });
                 }else if(password != res[0].password){
-                    resData(Res,-1,"用户名或密码不正确","");
+                    comontutils.comontutils.resData(Res,-1,"用户名或密码不正确","");
                 }
             }
         });
@@ -132,11 +120,11 @@ exports.changeuserinfo = function (req, res, next){
                 }
                 else {
                     if(res.length == 0){
-                    	resData(Res,-1,'网络错误','');
+                    	comontutils.resData(Res,-1,'网络错误','');
                         return;
                     }
                     res[0].password = '';
-                    resData(Res,0,'success',res[0]);
+                    comontutils.resData(Res,0,'success',res[0]);
                 }
             });
         });
@@ -162,12 +150,12 @@ exports.saveadress = function (req, res, next) {
                     }
                     else {
                         if(res.length == 0){
-                        	resData(Res,-1,'网络错误','');
+                        	comontutils.resData(Res,-1,'网络错误','');
                           
                             return;
                         }
                         res[0].password = '';
-                        resData(Res,0,'保存成功',res[0]);
+                        comontutils.resData(Res,0,'保存成功',res[0]);
                     }
                 });
             }
@@ -195,11 +183,11 @@ exports.delateadress = function (req, res, next) {
                     }
                     else {
                         if(res.length == 0){
-                        	resData(Res,-1,'网络错误','');
+                        	comontutils.resData(Res,-1,'网络错误','');
                             return;
                         }
                         res[0].password = '';
-                        resData(Res,0,'保存成功',res[0]);
+                        comontutils.resData(Res,0,'保存成功',res[0]);
                       
                     }
                 });
@@ -237,11 +225,11 @@ exports.updateadress = function (req, res, next) {
                     }
                     else {
                         if(res.length == 0){
-                        	resData(Res,0,'网络错误','');
+                        	comontutils.resData(Res,0,'网络错误','');
                             return;
                         }
                         res[0].password = '';
-                        resData(Res,0,'保存成功',res[0]);
+                        comontutils.resData(Res,0,'保存成功',res[0]);
                        
                     }
                 });
