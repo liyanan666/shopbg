@@ -50,7 +50,10 @@ var config = {
         origin: 'qiniu.bestpiaopiao.cn',
         // 如果vps在国外，请使用 http://up.qiniug.com/ ，这是七牛的国际节点
         // 如果在国内，此项请留空
-        uploadURL: 'http://xxxxxxxx',
+    },
+    //云片短信信息
+    yp_access:{
+    	apiley:'a8cacab2dab38f11c46aa98b4014cf7d'
     },
 
     // 文件上传配置
@@ -66,6 +69,7 @@ var config = {
 };
 
 if (process.env.NODE_ENV === 'test') {
+	//启动命令 NODE_ENV=test node app.js
     config.db = 'mongodb://127.0.0.1/test';
 }
 

@@ -614,3 +614,33 @@ Started 2018-06-03T07:37:22.812Z POST /api/qiniutoken ::ffff:127.0.0.1
 
 Started 2018-06-03T08:05:28.655Z POST /api/qiniutoken ::ffff:127.0.0.1
 [2018-06-03 16:05:28.657] [INFO] cheese - Completed 200 undefined
+[2018-06-04 14:13:35.061] [INFO] cheese - 
+
+Started 2018-06-04T06:13:35.060Z GET /api/sendmsg ::1
+[2018-06-04 14:15:35.089] [INFO] cheese - 
+
+Started 2018-06-04T06:15:35.089Z GET /api/sendmsg ::1
+[2018-06-04 14:17:35.095] [INFO] cheese - 
+
+Started 2018-06-04T06:17:35.095Z GET /api/sendmsg ::1
+[2018-06-04 15:03:39.607] [INFO] cheese - 
+
+Started 2018-06-04T07:03:39.607Z GET /api/sendmsg ::1
+[2018-06-04 15:03:39.628] [INFO] cheese - Completed 500 undefined
+[2018-06-04 15:03:39.667] [INFO] cheese - 
+
+Started 2018-06-04T07:03:39.667Z GET /favicon.ico ::1
+[2018-06-04 15:03:39.672] [INFO] cheese - Completed 404 undefined
+[2018-06-04 15:03:39.674] [INFO] cheese - 
+
+Started 2018-06-04T07:03:39.674Z GET /favicon.ico ::1
+[2018-06-04 15:03:39.675] [INFO] cheese - Completed 404 undefined
+[2018-06-04 15:05:16.830] [INFO] cheese - 
+
+Started 2018-06-04T07:05:16.830Z GET /api/sendmsg ::1
+[2018-06-04 15:06:32.012] [INFO] cheese - 
+
+Started 2018-06-04T07:06:32.011Z GET /api/sendmsg ::1
+[2018-06-04 15:08:32.034] [INFO] cheese - 
+
+Started 2018-06-04T07:08:32.034Z GET /api/sendmsg ::1
