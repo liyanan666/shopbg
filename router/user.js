@@ -29,7 +29,7 @@ exports.regist = function (req, res, next) { //注册
     form.parse(req, function (err, fields, files) {
         var code = fields.code;
         //得到表单之后做的事情
-        if(checkcode(req,res,code)){
+        if(comontutils.checkcode(req,res,code)){
             var username = fields.username;
             //MD5加密
             var password = fields.password;
