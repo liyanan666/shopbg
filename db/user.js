@@ -22,6 +22,9 @@ let UserSchema = new Schema({  //用户数据表
         areaval:{type: String},
     }] //地址
 });
+UserSchema.statics.findUser = function (id,cb) {
+    return this.find({ _id: id }, cb);
+}
 
 let BusinessSchema = new Schema({  //店铺数据表
     shopname:{type: String }, //店铺名称

@@ -113,7 +113,12 @@ exports.changeuserinfo = function (req, res, next){
     form.parse(req, function (err, fields, files) {
         var _id = fields.id;
         Userdata.findByIdAndUpdate(_id,JSON.parse(fields.userinfo), function(err, res){
-
+			
+			Userdata.findUser(_id,function(err,res){
+				console.log(123456);
+			});
+			return;
+			
             Userdata.find({'_id' : _id}, function(err, res){
                 if (err) {
                 	throw err;
