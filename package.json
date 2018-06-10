@@ -22,7 +22,8 @@
     "mongodb": "^3.0.0-rc0",
     "mongoose": "^4.13.7",
     "path": "^0.12.7",
-    "sha1": "^1.1.1"
+    "sha1": "^1.1.1",
+    "wechat": "^2.1.0"
   },
   "devDependencies": {
     "connect-mongo": "^2.0.1",

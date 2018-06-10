@@ -4,6 +4,7 @@ let formidable = require("formidable");
 let path = require("path");
 var https = require('https');
 var qs = require('querystring');
+var wechat = require('wechat');
 
 exports.qiniutoken = function(req, res, next){
 	var form = new formidable.IncomingForm();
@@ -93,3 +94,18 @@ exports.sendmsg = function(req, res, next){
 	    req.end();   
 	}
 }
+
+var configs = {
+ 	appID: "wx2e8f977800a3c2b8",  
+	encodingAESKey:"j5lJpndcuoRLs1JMrPLEe7GV52ASMHdcvWDw7fehPny",
+	token: "wechat",
+ 	checkSignature: true 
+};
+
+exports.wechats = wechat(configs, function (req, res, next) {
+// 微信输入信s息都在req.weixin上
+//var message = req.weixin;
+
+	res.reply('Hello world!');
+
+}) 	 	

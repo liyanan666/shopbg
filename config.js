@@ -41,6 +41,8 @@ var config = {
 	wechat : {  
         appID: "wx2e8f977800a3c2b8",  
         appSecret: "dd5611e812f179ddd791d12df20e2e6b",  
+        encodingAESKey:"j5lJpndcuoRLs1JMrPLEe7GV52ASMHdcvWDw7fehPny",
+        checkSignature: true,
         token: "wechat"
     },  
 
