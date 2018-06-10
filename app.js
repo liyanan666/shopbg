@@ -37,7 +37,7 @@ app.use(requestLog);
 //接口
 app.use('/', router);
 
-app.use(utils.sign(config));
+app.use('/wechat',utils.sign(config));
 
 //静态文件
 app.use('/shop',express.static('./shop'));
