@@ -44,6 +44,32 @@ app.use('/shop',express.static('./shop'));
 app.use("/avatar",express.static("./avatar"));
 
 
+var wechat = require('wechat');
+var configs = {
+	token: "wechat",
+  	appID: "wx2e8f977800a3c2b8",  
+    encodingAESKey:"j5lJpndcuoRLs1JMrPLEe7GV52ASMHdcvWDw7fehPny",
+    checkSignature: true
+    
+};
+ 
+app.use(express.query());
+app.use('/wechat', wechat(configs.token, wechat.text(function (message, req, res, next){
+  // 微信输入信息都在req.weixin上
+  var message = req.weixin;
+  if (message.FromUserName === 'diaosi') {
+    // 回复屌丝(普通回复)
+    res.reply('hehe');
+  } else{
+    //你也可以这样回复text类型的信息
+    res.reply({
+      content: '你好啊',
+      type: 'text'
+    });
+  }
+})));
+
+
 var server = app.listen(8080,function () {
     var host = server.address().address;
     var port = server.address().port;
