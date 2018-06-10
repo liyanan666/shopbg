@@ -19,12 +19,14 @@ utils.sign = function (config){
         var str = [token, timestamp, nonce].sort().join('');  
         var sha = sha1(str);  
         if (req.method == 'GET') {  
-  
+  					 
             if (sha == signature) {  
-                res.send(echostr+'')  
+            	console.log('signature'+echostr);
+                res.end(echostr+'')  
             }else{  
-                res.send('err');  
+                res.end('err');  
             }  
+            next(); 
         }  
         else if(req.method == 'POST'){  
             if (sha != signature) {  
