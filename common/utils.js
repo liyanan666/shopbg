@@ -21,11 +21,8 @@ utils.sign = function (config){
         if (req.method == 'GET') {  
   					 
             if (sha == signature) {  
-            	console.log('signature'+echostr);
                 res.end(echostr+'')  
-            }else{  
-                res.end('err');  
-            }  
+            }
             next(); 
         }  
         else if(req.method == 'POST'){  

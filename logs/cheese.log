@@ -376,3 +376,35 @@ Started 2018-06-09T08:38:59.367Z GET /user/applylist?userid=5b1b727a166a061df826
 
 Started 2018-06-09T08:49:41.725Z POST /api/qiniutoken ::ffff:127.0.0.1
 [2018-06-09 16:49:41.728] [INFO] cheese - Completed 200 undefined
+[2018-06-10 10:59:07.971] [INFO] cheese - 
+
+Started 2018-06-10T02:59:07.970Z GET / ::1
+[2018-06-10 10:59:07.982] [INFO] cheese - Completed 404 undefined
+[2018-06-10 10:59:08.199] [INFO] cheese - 
+
+Started 2018-06-10T02:59:08.199Z GET /favicon.ico ::1
+[2018-06-10 10:59:08.202] [INFO] cheese - Completed 404 undefined
+[2018-06-10 10:59:12.555] [INFO] cheese - 
+
+Started 2018-06-10T02:59:12.555Z GET /shop ::1
+[2018-06-10 10:59:12.559] [INFO] cheese - Completed 303 undefined
+[2018-06-10 10:59:12.562] [INFO] cheese - 
+
+Started 2018-06-10T02:59:12.562Z GET /shop/ ::1
+[2018-06-10 10:59:12.570] [INFO] cheese - Completed 200 undefined
+[2018-06-10 10:59:12.609] [INFO] cheese - 
+
+Started 2018-06-10T02:59:12.609Z GET /shop/src/css/styleret.css ::1
+[2018-06-10 10:59:12.615] [INFO] cheese - 
+
+Started 2018-06-10T02:59:12.615Z GET /shop/src/js/adaptive.js ::1
+[2018-06-10 10:59:12.617] [INFO] cheese - 
+
+Started 2018-06-10T02:59:12.617Z GET /shop/dist/build.js ::1
+[2018-06-10 10:59:12.622] [INFO] cheese - Completed 200 undefined
+[2018-06-10 10:59:12.624] [INFO] cheese - Completed 200 undefined
+[2018-06-10 10:59:12.629] [INFO] cheese - Completed 200 undefined
+[2018-06-10 10:59:12.720] [INFO] cheese - 
+
+Started 2018-06-10T02:59:12.720Z GET /shop/dist/2.build.js ::1
+[2018-06-10 10:59:12.723] [INFO] cheese - Completed 200 undefined
