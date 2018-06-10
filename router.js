@@ -18,5 +18,4 @@ router.get('/user/applylist',buess.applylist);//更新收货地址
 //公共接口
 router.post('/api/qiniutoken',api.qiniutoken);//获取token
 router.get('/api/sendmsg',api.sendmsg);//发送短信
-router.get('/api/wechat',api.wechats);
 module.exports = router;
