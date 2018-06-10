@@ -11,7 +11,7 @@ let Userdata = User.User;
 let md5 = require("../middlewares/md5.js");
 let jwt = require('jsonwebtoken'); //token生成
 
-let comontutils = require("../common/utils.js");  //公共方法
+let comontutils = require("../common/public.js");  //公共方法
 
 exports.getcode = function (req, res, next) {  //获取验证码
     let rand = parseInt(Math.random() * 9000 + 1000);
@@ -27,9 +27,9 @@ exports.regist = function (req, res, next) { //注册
     var Res = res;
     var form = new formidable.IncomingForm();
     form.parse(req, function (err, fields, files) {
-        var code = fields.code;
+        var codes = fields.code;
         //得到表单之后做的事情
-        if(comontutils.checkcode(req,res,code)){
+        if(req.session.code == codes){
             var username = fields.username;
             //MD5加密
             var password = fields.password;
@@ -85,7 +85,7 @@ exports.login = function (req, res, next) {  //登陆
             }
             else {
                 if(res.length == 0){
-                    comontutils.comontutils.resData(Res,-1,"未注册");
+                    comontutils.resData(Res,-1,"未注册");
                 }else if(password == res[0].password){
                 	var token = jwt.sign({ data: res[0]._id,exp: Math.floor(Date.now() / 1000) + (60 * 60 * 12)	 }, 'secret');
                 	
@@ -99,7 +99,7 @@ exports.login = function (req, res, next) {  //登陆
 				        "token":token
 				    });
                 }else if(password != res[0].password){
-                    comontutils.comontutils.resData(Res,-1,"用户名或密码不正确","");
+                    comontutils.resData(Res,-1,"用户名或密码不正确","");
                 }
             }
         });

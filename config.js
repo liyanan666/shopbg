@@ -38,7 +38,11 @@ var config = {
 
     log_dir: path.join(__dirname, 'logs'),
 
-
+	wechat : {  
+        appID: "wx2e8f977800a3c2b8",  
+        appSecret: "dd5611e812f179ddd791d12df20e2e6b",  
+        token: "wechat"
+    },  
 
     // 下面两个配置都是文件上传的配置
 

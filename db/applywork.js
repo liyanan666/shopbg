@@ -14,7 +14,7 @@ let Work = new Schema({  //兼职
     IDnum:{type:String},//身份证号
     payNum:{type:String},//支付宝号
     phoneNum:{type:String},//手机号
-    status:{type:Number,default:0}  //0审核中  1位审核通过
+    status:{type:Number,default:0}  //0审核中  1位审核通过 2审核失败
     
 });
 

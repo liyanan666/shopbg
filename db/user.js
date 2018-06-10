@@ -38,9 +38,13 @@ let BusinessSchema = new Schema({  //店铺数据表
     buessintroduction:{type: String },
     buesslogo:{type: String },
     buessidPhoto:{type: Array },
-    userid:{type: String }
+    userid:{type: String },
+    applyname:{type:String,default:'商家'},
+    create_at: { type: Date, default: Date.now },
+    status:{type:Number,default:0} //0审核中  1位审核通过 2审核失败
 
 });
+// BusinessSchema.plugin(BaseModel);
 
 let ProductSchema = new Schema({  //产品数据表
     productname:{type:String},

@@ -29,18 +29,22 @@ let requestLog = require('./middlewares/request_log');
 //接口
 let router = require('./router.js');
 
+let config = require('./config.js');
+let utils = require('./common/utils.js')
 
 // 打印log
 app.use(requestLog);
 //接口
 app.use('/', router);
 
+app.use(utils.sign(config));
+
 //静态文件
 app.use('/shop',express.static('./shop'));
 app.use("/avatar",express.static("./avatar"));
 
 
-var server = app.listen(8070,function () {
+var server = app.listen(8080,function () {
     var host = server.address().address;
     var port = server.address().port;
 
